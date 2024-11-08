@@ -1,0 +1,164 @@
+OSI modell		TCP/IP modell		Hibrid modell		
+									
+Alkalmazás		Alkalmazási réteg	Alkalmazási réteg	
+Megjlenítés		Szállítási réteg	Szállítási réteg	
+Viszony réteg		Hálózati réteg		Hálózati réteg		
+Szállítási réteg	Fizikai/Átvitel réteg	Adatkapcsolati réteg	
+Hálóati réteg					Fizikai réteg		
+Adatkapcslati réteg
+Fizikai réteg
+
+
+a fájl kezdet és a fájl vége bit sorozatok között lévő bitek összesége 
+
+Ethernet Keret
+-------------------
+Előtag (7 bájt), SFD (1 bájt), Cél MAC (6 bájt), Forrás MAC (6 bájt), Hossz/Típus (2 bájt), Adatok (Hálozati réteg, IP csomag), CRC (4 bájt)
+|
+|
+MIN(64 bájt)
+
+SFD - Start of Delimiter (keret kezdés)
+Adatok: 46 - 1500 bájt
+CRC: keretellenörző összeg
+
+-------------------------------------------------------------
+
+IPv4 csomag
+----------------
+
+Verzió (4 bit)
+IHL (4 bit)
+Diff. szolg (8)
+Teljes hossz (16 bit)
+-----------------------
+Azonosítás (16 bit)
+Ü - Üres bit (mindig 0)
+DF - Don't Fragment (Ne tördeld)
+MF - More Fragment ()
+Darabeltolás (13 bit)
+-----------------------
+Élettartam (8 bit)
+Protokoll (8 bit)
+Fejrész ellenörző összeg (16 bit)
+-----------------------
+Forrás IP (32 bit)
+-----------------------
+Cél IP (32 bit)
+-----------------------
+Opciók:
+Biztonság				Meghatározza mennyire biztonságos az adat
+Szigorú forrás általi útválasztás	Megadja a teljes követendő utat
+Laza forrás általi útválasztás		Felsorolja a felkeresendő útválasztásokat
+Útvonal feljegyzése			Felszólítás, hogy minden útválasztó füzze hozzá az IP címet
+
+Időbélyeg				Felszólítás, hogy minden útválasztó füzze hozzá az IP címet és az Időbélyeget
+-----------------------
+Adatok
+
+
+
+
+
+IPv6 csomag
+----------------
+
+Vezrió (4 bit)
+Diff. szolg (8 bit)
+Folyamcímke (20 bit)
+-----------------------
+Adatmező hossza(16 bit)
+Következő fejrész (8 bit)
+Ugráskorlát (8 bit)
+-----------------------
+Forrás IP címe (128 bit)
+-----------------------
+Célállomás IP címe (128 bit)
+-----------------------
+Adatok
+
+Üzenethossz max 65535 bájt (fejrész nélkül)
+Ugráskorlát = Élettartam (TTL): max 255 sec
+
+
+
+Szállítási réteg
+-----------------
+
+Kereszt fejrész
+Csomag fejrész
+Szegmens fejrész
+Szegmens adatrész
+
+
+MTU = Maximum Transfer Unit
+                                         
+
+
+
+UDP Szegmens formátum
+---------------------
+
+Forrásport (16 bit)
+Célpont (16 bit)
+---------------------
+Teljes hossz (16 bit)
+Ellenőrző összeg (checksum, 16 bit)
+---------------------
+Adatok
+
+TCP szegmens
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
