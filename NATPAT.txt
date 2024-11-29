@@ -1,0 +1,115 @@
+NAT és PAT
+
+Privát címtér (RFC1918 definiálja)
+
+A osztály: 10.0.0.0 - 10.255.255.255
+B osztály: 172.16.0.0 - 172.31.255.255
+C osztály: 192.168.0.0 - 192.168.255.255
+
+----------------------------------------------------------------------------
+
+Előnyök:
+
+Csökkenti a nyilvános ip-címek beszerzésével járó magas költséget
+
+Biztonságot nyújt azzal, hogy más hálózatok és szervezetek
+nem látják a belső címeket
+
+----------------------------------------------------------------------------
+
+Privát IP-cím kialakulása:
+
+VLSM-nél használt hierarchikus tervezési elveket alkalmazzuk
+
+Gondos tervezést igényel a címzési rendszer kialakítása
+
+----------------------------------------------------------------------------
+
+NAT:
+Privát címzésű LAN internethez való csatlakozáshoz hálózati
+címfordítást (NAT) használnak
+
+A belső privát címeket fordítja egy vagy több nyilvános címre
+
+A NAT minden belső csomag privát forrás IP-címét az internet
+felé továbbítás előtt nyilvános bejegyzett IP-címre cseréli
+
+----------------------------------------------------------------------------
+
+NAT hátrányai:
+
+A NAT növeli a kapcsolási késleltetést, mivel a csomag
+fejlécében lévő minden egyes IPv4-cím lefordítása időt vesz igénybe
+
+NAT használatával a végpontól végpontig terjedő címzés megszűnik (digitáis aláírás)
+
+A NAT bonyolítja az alagutazó (tunneling) protokollokat is,
+mint például a IPsec, mert az módosítja a fejlécek értékeit, ami megzavarja
+az IPsec és más alagutazó protokollok által végzett integritás-ellenőrzést
+
+----------------------------------------------------------------------------
+
+NAT jellemzői:
+
+Négy típus:
+Belső helyi cím
+Belső globális cím
+Külső helyi cím
+Külső globális cím
+
+Belső cím - Annak az eszköznek a címe, amelyet lefordít a NAT
+
+Külső cím - A céleszköz címe
+
+Helyi cím - A helyi cím bármely olyan cím amely a hálózat belső részén jelenik meg
+
+Globális cím - A globális cím olyan cím, amelya hálózat külső részén jelenik meg 
+
+----------------------------------------------------------------------------
+
+NAT három típusa:
+
+Statikus címfordítás (statikus NAT) - Egy-az-egyhez típusú hozzárendelés
+a helyi és a globális címek között
+
+Dinamikus címfordítás (dinamikus NAT) - Több-a-többhöz típusú hozzárendelés
+a helyi és a globális címek között
+
+Port címfordítás (PAT) - Több-a-többhöz típusú megfeleltetés a helyi
+és a globális címek között. Ezt a módszert túlterhelésként (NAT overloading) is ismerjük
+
+----------------------------------------------------------------------------
+
+NAT tervezése
+
+vegyük számba azokat a kiszolgálókat, amelyek állandókülső címet igényelnek!
+
+Határozzuk megmel belső állomások igényelnek címfordítást
+
+Határozzuk meg, mely interfészekre érkezik a külvilág felé irányuló belső forgalom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
