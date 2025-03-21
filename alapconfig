@@ -3,48 +3,41 @@ configure terminal
 hostname sw1
 
 configure terminal
-username 1234 privilege 15 secret 1234
-enable password 1234
+username alma1234 secret alma1234
+enable password alma1234
 end
 
 configure terminal
-ip domain-name winserver.winserver.lan
+ip domain-name wmtech.hu
 cry key gen rsa
 1024
 
 line con 0
-password 1234
+password alma1234
 login local
 end
 
 configure terminal
-enable secret 1234
+enable secret alma1234
 end
 
 configure terminal
 line vty 0 15
-password 1234
+password alma1234
 trans input ssh
 login local
 end
 
 configure terminal
-ip ftp username 1234
-ip ftp password 1234
-
-int vlan 1
-ip address 192.168.1.2 255.255.255.0
-no sh
-ip default-gate 192.168.1.1
-end
+ip ftp username alma1234
+ip ftp password alma1234
 
 configure terminal
 service password-encryption
 end
 
 configure terminal
-banner motd 'Belepes idegeneknek tilos'
+banner motd 'Idegeneknek belépni tilos'
 end
-
 
 copy r st
